@@ -1,6 +1,6 @@
 .. include:: /../common/stub-topic.txt
 
-|stub-icon| Razor Syntax
+|stub-icon| Razor 语法
 ========================
 
 .. include:: /../common/stub-notice.txt

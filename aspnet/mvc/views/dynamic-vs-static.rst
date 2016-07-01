@@ -1,6 +1,6 @@
 .. include:: /../common/stub-topic.txt
 
-|stub-icon| Dynamic vs Strongly Typed Views
+|stub-icon| Dynamic 与强类型视图
 ===========================================
 
 .. include:: /../common/stub-notice.txt

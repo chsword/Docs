@@ -1,6 +1,6 @@
 .. include:: /../common/stub-topic.txt
 
-|stub-icon| Creating a Custom View Engine
+|stub-icon| 创建一个自定义视图引擎
 =========================================
 
 .. include:: /../common/stub-notice.txt
