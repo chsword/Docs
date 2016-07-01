@@ -1,4 +1,4 @@
-Publishing to IIS with Web Deploy using Visual Studio
+在 Visual Studio 中 使用 Web Deploy 发布到 IIS
 ============================================================
 
 By `Sayed Ibrahim Hashimi`_

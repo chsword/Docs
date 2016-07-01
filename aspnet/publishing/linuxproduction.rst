@@ -1,4 +1,4 @@
-Publish to a Linux Production Environment
+发布到 Linux 生产环境
 =========================================
 
 By `Sourabh Shirhatti`_

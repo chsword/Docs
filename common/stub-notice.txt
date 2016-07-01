@@ -1,5 +1,5 @@
 .. note::
-    We are currently working on this topic.
+    我们正在编写此主题。
 
     We welcome your input to help shape the scope and approach. You can track the status and provide input on this issue_ at GitHub.
 

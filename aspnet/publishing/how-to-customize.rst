@@ -1,6 +1,6 @@
 .. include:: /../common/stub-topic.txt
 
-|stub-icon| How to Customize Publishing
+|stub-icon| 自定义发布
 =======================================
 
 .. include:: /../common/stub-notice.txt

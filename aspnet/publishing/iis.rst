@@ -1,4 +1,4 @@
-Publishing to IIS
+发布到 IIS
 =================
 
 By `Luke Latham`_ and `Rick Anderson`_

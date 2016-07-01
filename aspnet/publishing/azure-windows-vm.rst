@@ -1,6 +1,6 @@
 .. include:: /../common/stub-topic.txt
 
-|stub-icon| Publishing to a Windows Virtual Machine on Azure
+|stub-icon| 发布到 Azure 的 Windows 虚拟机上
 ============================================================
 
 .. include:: /../common/stub-notice.txt

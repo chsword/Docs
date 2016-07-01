@@ -1,4 +1,4 @@
-How Web Publishing In Visual Studio Works
+如何在 Visual Studio 环境下使用 Web 发布功能
 =========================================
 
 By `Sayed Ibrahim Hashimi`_

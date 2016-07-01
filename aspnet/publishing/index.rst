@@ -1,6 +1,6 @@
 .. _publishing-and-deployment:
 
-Publishing and Deployment
+发布与部署
 =========================
 
 .. toctree::
