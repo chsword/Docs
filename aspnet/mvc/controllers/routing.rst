@@ -1,6 +1,6 @@
 .. include:: /../common/stub-topic.txt
 
-|stub-icon| Routing to Controller Actions
+|stub-icon| Routing to Controller Actions £¨Â·ÓÉµ½ Action£©
 =========================================
 
 .. include:: /../common/stub-notice.txt

@@ -2,7 +2,7 @@
 
 .. _dependency-injection-controllers:
 
-Dependency Injection and Controllers
+Dependency Injection and Controllers £®“¿¿µ◊¢»Î”Î Controller£©
 ====================================
 
 By `Steve Smith`_

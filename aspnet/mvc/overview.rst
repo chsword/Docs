@@ -1,6 +1,6 @@
 .. include:: /../common/stub-topic.txt
 
-|stub-icon| Overview of ASP.NET MVC
+|stub-icon| ASP.NET MVC ∏≈¿¿
 ===================================
 
 .. include:: /../common/stub-notice.txt
