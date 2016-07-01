@@ -1,4 +1,4 @@
-Building your first ASP.NET Core MVC app with Visual Studio
+使用 Visual Studio 构建你的第一个 ASP.NET Core MVC 应用程序
 -----------------------------------------------------------
 
 .. toctree::

@@ -5,10 +5,10 @@
 
 .. _index:
 
-ASP.NET Core Documentation
+ASP.NET Core 文档
 ==========================
 
-.. attention:: ASP.NET 5 has been renamed to ASP.NET Core 1.0. Read `more <https://blogs.msdn.microsoft.com/webdev/2016/02/01/an-update-on-asp-net-core-and-net-core/>`_.
+.. attention:: ASP.NET 5 已经更名为 ASP.NET Core 1.0。 更多 `请阅读 <https://blogs.msdn.microsoft.com/webdev/2016/02/01/an-update-on-asp-net-core-and-net-core/>`_。
 
 .. include:: ../common/stub-overview.txt
 
