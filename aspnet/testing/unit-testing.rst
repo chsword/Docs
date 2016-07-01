@@ -1,6 +1,6 @@
 :version: 1.0.0-rc2
 
-Unit Testing
+单元测试
 ============
 
 By `Steve Smith`_
