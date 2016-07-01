@@ -1,4 +1,4 @@
-Fundamentals
+基础
 ============
 
 .. toctree::

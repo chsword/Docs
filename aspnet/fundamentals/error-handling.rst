@@ -1,19 +1,19 @@
 :version: 1.0.0-rc1
 
-Error Handling
+异常处理
 ==============
 
-By `Steve Smith`_
+By `Steve Smith`_ 
 
-When errors occur in your ASP.NET app, you can handle them in a variety of ways, as described in this article.
+在你的ASP.NET应用程序发生错误时，你可以用多种方法来处理它们，此文章即描述此事。
 
 .. contents:: Sections
 	:local:
 	:depth: 1
 
-`View or download sample code <https://github.com/aspnet/Docs/tree/master/aspnet/fundamentals/error-handling/sample>`_
+`查看下载示例代码 <https://github.com/aspnet/Docs/tree/master/aspnet/fundamentals/error-handling/sample>`_
 
-Configuring an Exception Handling Page
+配置一个异常处理页面
 --------------------------------------
 
 You configure the pipeline for each request in the ``Startup`` class's ``Configure()`` method (learn more about :doc:`startup`). You can add a simple exception page, meant only for use during development, very easily. All that's required is to add a dependency on ``Microsoft.AspNetCore.Diagnostics`` to the project and then add one line to ``Configure()`` in ``Startup.cs``:
