@@ -1,8 +1,8 @@
-:version: 1.0.0-rc1
+ï»¿:version: 1.0.0-rc1
 
 .. _dependency-injection-controllers:
 
-Dependency Injection and Controllers £¨ÒÀÀµ×¢ÈëÓë Controller£©
+Dependency Injection and Controllers ï¼ˆä¾èµ–æ³¨å…¥ä¸ Controllerï¼‰
 ====================================
 
 By `Steve Smith`_

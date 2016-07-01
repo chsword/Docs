@@ -1,4 +1,4 @@
-Controllers £¨¿ØÖÆÆ÷£©
+ï»¿Controllers ï¼ˆæŽ§åˆ¶å™¨ï¼‰
 -----------
 
 .. toctree::
