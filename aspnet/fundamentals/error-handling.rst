@@ -96,13 +96,13 @@ By `Steve Smith`_
 
 在上面的例子中，浏览器中将会看到一个 ``302 / Found`` 的状态，并且将会重定向到对应的 URL 页面。
 
-Alternately, the middleware can re-execute the request from a new path format string:
+或者，中间件可以重新执行来自一个新的路径 format string 的请求：
 
 .. code-block:: c#
 
   app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
-The ``UseStatusCodePagesWithReExecute`` method will still return the original status code to the browser, but will also execute the handler given at the path specified.
+``UseStatusCodePagesWithReExecute`` 方法将仍然返回原始 status code, 但也将在指定的路径上执行给定的处理程序。
 
 如果需要对某些请求禁用 status code 页面的话, 你可以使用以下代码:
 
@@ -117,14 +117,14 @@ The ``UseStatusCodePagesWithReExecute`` method will still return the original st
 在客户端-服务器交互过程中异常处理的限制
 ------------------------------------------------------------------
 
-Web apps have certain limitations to their exception handling capabilities because of the nature of disconnected HTTP requests and responses. Keep these in mind as you design your app's exception handling behavior.
+因为HTTP请求和响应的隔离，所以Web应用程序的异常处理能力有一定的局限性。需要在设计应用程序的异常处理时牢记这些。
 
-#. Once the headers for a response have been sent, you cannot change the response's status code, nor can any exception pages or handlers run. The response must be completed or the connection aborted.
-#. If the client disconnects mid-response, you cannot send them the rest of the content of that response.
-#. There is always the possibility of an exception occuring one layer below your exception handling layer.
-#. Don't forget, exception handling pages can have exceptions, too. It's often a good idea for production error pages to consist of purely static content.
+#. 一旦一个响应的头被发送，您就不能改变响应的状态代码，也不能改变任何异常的页面或处理程序运行。响应必须完成或中止连接。
+#. 如果客户端断开正在连接中的响应，则无法返回其余响应内容。
+#. 在你进行异常捕获那层之下，总会有各种原因导致异常发生。
+#. 不要忘记，异常处理页面也会发生异常。生产环境的错误页面，可以考虑纯的静态页面。
 
-Following the above recommendations will help ensure your app remains responsive and is able to gracefully handle exceptions that may occur.
+遵循上述建议将有助于确保您的应用程序保持响应，并能够优雅地处理可能发生的异常。
 
 服务器端的异常处理
 -------------------------
@@ -141,14 +141,14 @@ One of the trickiest places to handle exceptions in your app is during its start
 ASP.NET MVC 异常处理
 --------------------------
 
-:doc:`MVC </mvc/index>` apps have some additional options when it comes to handling errors, such as configuring exception filters and performing model validation.
+:doc:`MVC </mvc/index>` 有一些异常处理的额外项，如异常过滤器和模型验证导致的异常等。
 
 异常过滤器
 ^^^^^^^^^^^^^^^^^
 
-Exception filters can be configured globally or on a per-controller or per-action basis in an :doc:`MVC </mvc/index>` app. These filters handle any unhandled exception that occurs during the execution of a controller action or another filter, and are not called otherwise. Exception filters are detailed in :doc:`filters </mvc/controllers/filters>`.
+在 :doc:`MVC </mvc/index>` 中，Exception filters 异常过滤器可以进行全局应用，也可以应用到单个 Controller 上或单个 Action 上。这些过滤器可以处理由 Controller Action 或其它的过滤器所产生的未捕获的异常。详情见 :doc:`filters </mvc/controllers/filters>`.
 
-.. tip:: Exception filters are good for trapping exceptions that occur within MVC actions, but they're not as flexible as error handling middleware. Prefer middleware for the general case, and use filters only where you need to do error handling *differently* based on which MVC action was chosen.
+.. tip:: MVC 的异常过滤器在对 MVC 的 Action 进行异常处理时很不错，但是它没有通过中间件进行异常处理灵活性大。所以中间件更加通用，而如果仅需要在 MVC 中处理异常，那么能过滤器更加合适 。
 
 处理 Model State 的异常错误
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
