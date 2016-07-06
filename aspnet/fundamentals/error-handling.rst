@@ -44,7 +44,7 @@ When not in development, it's a good idea to configure an exception handler path
 
   app.UseExceptionHandler("/Error");
 
-Using the Developer Exception Page
+使用开发异常处理页面
 ----------------------------------
 
 The developer exception page displays useful diagnostics information when an unhandled exception occurs within the web processing pipeline. The page includes several tabs with information about the exception that was triggered and the request that was made. The first tab includes a stack trace:
@@ -61,7 +61,7 @@ In this case, you can see the value of the ``throw`` parameter that was passed t
 
 .. _status-code-pages:
 
-Configuring Status Code Pages
+配置 Status Code 页面
 -----------------------------
 
 By default, your app will not provide a rich status code page for HTTP status codes such as 500 (Internal Server Error) or 404 (Not Found). You can configure the ``StatusCodePagesMiddleware`` adding this line to the ``Configure`` method:
@@ -114,7 +114,7 @@ If you need to disable status code pages for certain requests, you can do so usi
     statusCodePagesFeature.Enabled = false;
   }
 
-Limitations of Exception Handling During Client-Server Interaction
+在客户端-服务器交互过程中异常处理的限制
 ------------------------------------------------------------------
 
 Web apps have certain limitations to their exception handling capabilities because of the nature of disconnected HTTP requests and responses. Keep these in mind as you design your app's exception handling behavior.
@@ -126,31 +126,31 @@ Web apps have certain limitations to their exception handling capabilities becau
 
 Following the above recommendations will help ensure your app remains responsive and is able to gracefully handle exceptions that may occur.
 
-Server Exception Handling
+服务器端的异常处理
 -------------------------
 
 In addition to the exception handling logic in your app, the server hosting your app will perform some exception handling. If the server catches an exception before the headers have been sent it will send a 500 Internal Server Error response with no body. If it catches an exception after the headers have been sent it must close the connection. Requests that are not handled by your app will be handled by the server, and any exception that occurs will be handled by the server's exception handling. Any custom error pages or exception handling middleware or filters you have configured for your app will not affect this behavior.
 
 .. _startup-error-handling:
 
-Startup Exception Handling
+Startup 中的异常处理
 --------------------------
 
 One of the trickiest places to handle exceptions in your app is during its startup. Only the hosting layer can handle exceptions that take place during app startup. Exceptions that occur in your app's startup can also impact server behavior. For example, to enable SSL in Kestrel, one must configure the server with ``KestrelServerOptions.UseHttps()``. If an exception happens before this line in ``Startup``, then by default hosting will catch the exception, start the server, and display an error page on the non-SSL port. If an exception happens after that line executes, then the error page will be served over HTTPS instead.
 
-ASP.NET MVC Error Handling
+ASP.NET MVC 异常处理
 --------------------------
 
 :doc:`MVC </mvc/index>` apps have some additional options when it comes to handling errors, such as configuring exception filters and performing model validation.
 
-Exception Filters
+异常过滤器
 ^^^^^^^^^^^^^^^^^
 
 Exception filters can be configured globally or on a per-controller or per-action basis in an :doc:`MVC </mvc/index>` app. These filters handle any unhandled exception that occurs during the execution of a controller action or another filter, and are not called otherwise. Exception filters are detailed in :doc:`filters </mvc/controllers/filters>`.
 
 .. tip:: Exception filters are good for trapping exceptions that occur within MVC actions, but they're not as flexible as error handling middleware. Prefer middleware for the general case, and use filters only where you need to do error handling *differently* based on which MVC action was chosen.
 
-Handling Model State Errors
+处理 Model State 的异常错误
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :doc:`Model validation </mvc/models/validation>` occurs prior to each controller action being invoked, and it is the action method’s responsibility to inspect ``ModelState.IsValid`` and react appropriately. In many cases, the appropriate reaction is to return some kind of error response, ideally detailing the reason why model validation failed. 
