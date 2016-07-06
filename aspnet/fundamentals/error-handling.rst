@@ -82,19 +82,19 @@ By `Steve Smith`_
     context.HttpContext.Response.SendAsync("Handler, status code: " +
     context.HttpContext.Response.StatusCode, "text/plain"));
 
-Alternately, you can simply pass it a content type and a format string:
+当然，你可以使用另一种更简单的方式直接使用 content type 和一个 format string 来进行传值:
 
 .. code-block:: c#
 
   app.UseStatusCodePages("text/plain", "Response, status code: {0}");
 
-The middleware can handle redirects (with either relative or absolute URL paths), passing the status code as part of the URL:
+中间件也可以处理重定向 (支持绝对、相对 URL 路径), 你可以通过下列这种方式来传递 status code:
 
 .. code-block:: c#
 
   app.UseStatusCodePagesWithRedirects("~/errors/{0}");
 
-In the above case, the client browser will see a ``302 / Found`` status and will redirect to the URL provided.
+在上面的例子中，浏览器中将会看到一个 ``302 / Found`` 的状态，并且将会重定向到对应的 URL 页面。
 
 Alternately, the middleware can re-execute the request from a new path format string:
 
@@ -104,7 +104,7 @@ Alternately, the middleware can re-execute the request from a new path format st
 
 The ``UseStatusCodePagesWithReExecute`` method will still return the original status code to the browser, but will also execute the handler given at the path specified.
 
-If you need to disable status code pages for certain requests, you can do so using the following code:
+如果需要对某些请求禁用 status code 页面的话, 你可以使用以下代码:
 
 .. code-block:: c#
 
