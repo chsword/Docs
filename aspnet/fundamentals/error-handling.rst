@@ -24,9 +24,9 @@ By `Steve Smith`_
 	:dedent: 8
 	:emphasize-lines: 6,8
 
-The above code includes a check to ensure the environment is development before adding the call to ``UseDeveloperExceptionPage``. This is a good practice, since you typically do not want to share detailed exception information about your application publicly while it is in production. :doc:`Learn more about configuring environments <environments>`.
+上述代码在调用 ``UseDeveloperExceptionPage`` 之前有一个判断当前环境是否为开发环境的判断。如果你想在开发环境显示详细的异常信息，而在生产环境显示友好的提示的话，这是一个比较好的方式。  :doc:`Learn more about configuring environments <environments>`.
 
-The sample application includes a simple mechanism for creating an exception:
+示例应用程序包含了一个产生异常的简单机制：
 
 .. literalinclude:: error-handling/sample/src/ErrorHandlingSample/Startup.cs
 	:language: c#
@@ -34,11 +34,11 @@ The sample application includes a simple mechanism for creating an exception:
 	:dedent: 8
 	:emphasize-lines: 5-8
 
-If a request includes a non-empty querystring parameter for the variable ``throw`` (e.g. a path of ``/?throw=true``), an exception will be thrown. If the environment is set to ``Development``, the developer exception page is displayed:
+如果请求的 QueryString 中存在一个非空的 Key 为 ``throw`` 的变量的话 (例如 URL 为 ``/?throw=true``)，这样就会触发一个异常。如果当前运行环境是开发环境： ``Development``, 那么异常页面将如下图所示:
 
 .. image:: error-handling/_static/developer-exception-page.png
 
-When not in development, it's a good idea to configure an exception handler path using the ``UseExceptionHandler`` middleware:
+当支行环境是非开发环境 , 则可以使用 ``UseExceptionHandler`` 中间件来处理异常:
 
 .. code-block:: c#
 
