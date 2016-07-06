@@ -16,7 +16,7 @@ By `Steve Smith`_
 配置一个异常处理页面
 --------------------------------------
 
-You configure the pipeline for each request in the ``Startup`` class's ``Configure()`` method (learn more about :doc:`startup`). You can add a simple exception page, meant only for use during development, very easily. All that's required is to add a dependency on ``Microsoft.AspNetCore.Diagnostics`` to the project and then add one line to ``Configure()`` in ``Startup.cs``:
+你可以在 ``Startup`` 类中的 ``Configure()`` 方法中为每个请求配置管道（pipeline） (更多请参阅 :doc:`startup`)。 你可以轻易地添加一个简单的仅开发时可见的异常页面。 所必须的是在项目中添加 ``Microsoft.AspNetCore.Diagnostics`` 的依赖，然后在 ``Startup.cs`` 类中的 ``Configure()`` 中添加一行代码:
 
 .. literalinclude:: error-handling/sample/src/ErrorHandlingSample/Startup.cs
 	:language: c#
