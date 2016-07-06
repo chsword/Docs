@@ -153,6 +153,6 @@ ASP.NET MVC 异常处理
 处理 Model State 的异常错误
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:doc:`Model validation </mvc/models/validation>` occurs prior to each controller action being invoked, and it is the action method’s responsibility to inspect ``ModelState.IsValid`` and react appropriately. In many cases, the appropriate reaction is to return some kind of error response, ideally detailing the reason why model validation failed. 
+:doc:`Model validation </mvc/models/validation>` 每个 controller action 在执行时，都会进行 Model 验证, action 方法中主要是检查 ``ModelState.IsValid`` 以及自行进行判断。 在许多情况下，自己进行判断后是返回某种错误的响应，可以详述了模型验证失败的原因。
 
-Some apps will choose to follow a standard convention for dealing with model validation errors, in which case a :doc:`filter </mvc/controllers/filters>` may be an appropriate place to implement such a policy. You should test how your actions behave with valid and invalid model states (learn more about :doc:`testing controller logic </mvc/controllers/testing>`).
+一些应用程序将选择遵循一个标准的惯例来处理 Model 验证错误, 使用 :doc:`filter </mvc/controllers/filters>` 可能是一个好方法，可以通过 Model State 来检测 Action 是否通过了验证。:doc:`testing controller logic </mvc/controllers/testing>`).
