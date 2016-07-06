@@ -44,18 +44,18 @@ By `Steve Smith`_
 
   app.UseExceptionHandler("/Error");
 
-使用开发异常处理页面
+使用开发模式异常处理页面
 ----------------------------------
 
-The developer exception page displays useful diagnostics information when an unhandled exception occurs within the web processing pipeline. The page includes several tabs with information about the exception that was triggered and the request that was made. The first tab includes a stack trace:
+开发模式异常处理页面将在 Web 处理的管道发生未捕获的异常时显示，其中包含了很多有用的诊断信息。其中包含了一些标签页，包含请求信息和导致异常的信息，第一个标签页包含了异常的堆栈信息：
 
 .. image:: error-handling/_static/developer-exception-page.png
 
-The next tab shows the query string parameters, if any:
+第二个标签页显示了 QueryString 参数信息：
 
 .. image:: error-handling/_static/developer-exception-page-query.png
 
-In this case, you can see the value of the ``throw`` parameter that was passed to this request. This request didn't have any cookies, but if it did, they would appear on the Cookies tab. You can see the headers that were passed in the last tab:
+在这里你可以看到本例中 QueryString 的参数 ``throw`` 。当前请求未包含 Cookies，如果请求中存在 Cookies，你可以在 Cookies 标签页中查看。如果想要查看请求的 Headers ，则可以在 Headers 标签页中查看。
 
 .. image:: error-handling/_static/developer-exception-page-headers.png
 
@@ -64,17 +64,17 @@ In this case, you can see the value of the ``throw`` parameter that was passed t
 配置 Status Code 页面
 -----------------------------
 
-By default, your app will not provide a rich status code page for HTTP status codes such as 500 (Internal Server Error) or 404 (Not Found). You can configure the ``StatusCodePagesMiddleware`` adding this line to the ``Configure`` method:
+默认情况下，应用程序都没有提供一个比较好的 HTTP 状态码错误页面，例如 500 (Internal Server Error) 或 404 (Not Found) 的错误显示页面。在这里，可以通过在 ``Configure`` 方法中添加 ``StatusCodePagesMiddleware`` 来进行定义:
 
 .. code-block:: c#
 
   app.UseStatusCodePages();
 
-By default, this middleware adds very simple, text-only handlers for common status codes. For example, the following is the result of a 404 Not Found status code:
+默认情况下添加中间件是很容易的，可以写一个纯文本的 status code 处理程序,例如像下面这个 404 Not Found 的状态码页面:
 
 .. image:: error-handling/_static/default-404-status-code.png
 
-The middleware supports several different extension methods. You can pass it a custom lamba expression:
+中间件支持数种不同的扩展方法 ，你可以通过自定义的 lambda 表达式进行传参：
 
 .. code-block:: c#
 
