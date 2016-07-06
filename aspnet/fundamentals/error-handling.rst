@@ -7,7 +7,7 @@ By `Steve Smith`_
 
 在你的ASP.NET应用程序发生错误时，你可以用多种方法来处理它们，此文章即描述此事。
 
-.. contents:: Sections
+.. contents:: 本文章节
 	:local:
 	:depth: 1
 
