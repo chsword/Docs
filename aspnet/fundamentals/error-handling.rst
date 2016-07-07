@@ -24,7 +24,7 @@ By `Steve Smith`_
 	:dedent: 8
 	:emphasize-lines: 6,8
 
-上述代码在调用 ``UseDeveloperExceptionPage`` 之前有一个判断当前环境是否为开发环境的判断。如果你想在开发环境显示详细的异常信息，而在生产环境显示友好的提示的话，这是一个比较好的方式。  :doc:`Learn more about configuring environments <environments>`.
+上述代码在调用 ``UseDeveloperExceptionPage`` 之前有一个判断当前环境是否为开发环境的判断。如果你想在开发环境显示详细的异常信息，而在生产环境显示友好的提示的话，这是一个比较好的方式。  :doc:`学习更多有关 environments 的内容 <environments>`.
 
 示例应用程序包含了一个产生异常的简单机制：
 
@@ -130,13 +130,15 @@ By `Steve Smith`_
 -------------------------
 
 In addition to the exception handling logic in your app, the server hosting your app will perform some exception handling. If the server catches an exception before the headers have been sent it will send a 500 Internal Server Error response with no body. If it catches an exception after the headers have been sent it must close the connection. Requests that are not handled by your app will be handled by the server, and any exception that occurs will be handled by the server's exception handling. Any custom error pages or exception handling middleware or filters you have configured for your app will not affect this behavior.
+除了在应用程序中的异常处理逻辑，服务器托管的应用程序将执行一些异常处理。如果服务器在发送 Headers 之前捕获异常，它将返回一个没有响应体的 500 服务器内部响应错误。如果在 Headers 发送后捕获一个异常，则会关闭连接。应用程序不处理请求，Web Server 也会处理请求，任何异常将由 Server 进行处理。任何自定义错误页面或异常处理中间件或过滤器，都不会影响这种行为。
 
 .. _startup-error-handling:
 
 Startup 中的异常处理
 --------------------------
 
-One of the trickiest places to handle exceptions in your app is during its startup. Only the hosting layer can handle exceptions that take place during app startup. Exceptions that occur in your app's startup can also impact server behavior. For example, to enable SSL in Kestrel, one must configure the server with ``KestrelServerOptions.UseHttps()``. If an exception happens before this line in ``Startup``, then by default hosting will catch the exception, start the server, and display an error page on the non-SSL port. If an exception happens after that line executes, then the error page will be served over HTTPS instead.
+异常处理最棘手的地方是在 Startup 时。只有 Server 可以处理在应用程序启动过程中发生的异常。在应用程序的启动过程中发生的异常也会影响服务器行为。例如，在 Kestrel 启用 SSL，必须使用 ``KestrelServerOptions.UseHttps()`` 进行配置。当一个异常在这之前发生，然后默认主机将捕获异常，启动服务器，并在非 SSL 端口显示错误页面。如果异常发生在这之后，那么错误页面将会是 HTTPS。
+
 
 ASP.NET MVC 异常处理
 --------------------------
@@ -155,4 +157,4 @@ ASP.NET MVC 异常处理
 
 :doc:`Model validation </mvc/models/validation>` 每个 controller action 在执行时，都会进行 Model 验证, action 方法中主要是检查 ``ModelState.IsValid`` 以及自行进行判断。 在许多情况下，自己进行判断后是返回某种错误的响应，可以详述了模型验证失败的原因。
 
-一些应用程序将选择遵循一个标准的惯例来处理 Model 验证错误, 使用 :doc:`filter </mvc/controllers/filters>` 可能是一个好方法，可以通过 Model State 来检测 Action 是否通过了验证。:doc:`testing controller logic </mvc/controllers/testing>`).
+一些应用程序将选择遵循一个标准的惯例来处理 Model 验证错误, 使用 :doc:`filter </mvc/controllers/filters>` 可能是一个好方法，可以通过 Model State 来检测 Action 是否通过了验证。:doc:`测试 controller 的逻辑 </mvc/controllers/testing>`).
